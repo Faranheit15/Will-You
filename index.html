@@ -2,37 +2,75 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="A stupid cute React project which you can send to your crush to make her go awww."
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
     />
-    <title>Will You Go Out With Me?</title>
-    <script type="text/javascript">
-      (function (l) {
-        if (l.search[1] === "/") {
-          var decoded = l.search
-            .slice(1)
-            .split("&")
-            .map(function (s) {
-              return s.replace(/~and~/g, "&");
-            })
-            .join("?");
-          window.history.replaceState(
-            null,
-            null,
-            l.pathname.slice(0, -1) + decoded + l.hash
-          );
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Will you go out with me?</title>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #a444f3;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #content {
+        text-align: center;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 600px) {
+        button {
+          font-size: 14px;
         }
-      })(window.location);
-    </script>
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div id="content">
+      <h1>Will you go out with me?</h1>
+      <img
+        src="https://media1.giphy.com/media/ymsh0cws7ROmko6VvM/giphy.gif?cid=ecf05e47ra2k3yoa8dmi9fec4gecd6zzfu1xchkqtsq9qpf4&ep=v1_stickers_search&rid=giphy.gif&ct=s"
+        alt="GIF"
+      />
+      <br />
+      <button id="yesButton" onclick="location.href='YaayPage.html'">
+        Yes
+      </button>
+      <button id="noButton" onmouseover="moveButton()">No</button>
+    </div>
+
+    <script>
+      function moveButton() {
+        var button = document.getElementById("noButton");
+        var newX = Math.random() * window.innerWidth;
+        var newY = Math.random() * window.innerHeight;
+        button.style.position = "absolute";
+        button.style.left = newX + "px";
+        button.style.top = newY + "px";
+      }
+    </script>
   </body>
 </html>
